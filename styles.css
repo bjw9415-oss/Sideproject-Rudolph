@@ -1,0 +1,60 @@
+body {
+  background-color: #0b3d91; /* 밤하늘 느낌 */
+  overflow: hidden;
+}
+
+/* 루돌프 전체 */
+#rudolph {
+  position: absolute;
+  top: 200px;
+  left: 0;
+}
+
+/* 얼굴 */
+.face {
+  width: 100px;
+  height: 100px;
+  background-color: #8b5a2b;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* 눈 */
+.eye {
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+}
+
+.eye.left {
+  left: 25px;
+}
+.eye.right {
+  right: 25px;
+}
+
+/* 코 (반짝이는 핵심) */
+.nose {
+  width: 18px;
+  height: 18px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: blink 1s infinite alternate;
+}
+
+/* 코 깜빡임 애니메이션 */
+@keyframes blink {
+  from {
+    box-shadow: 0 0 5px red;
+  }
+  to {
+    box-shadow: 0 0 20px red;
+  }
+}

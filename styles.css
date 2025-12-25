@@ -11,6 +11,13 @@ body {
 }
 
 /* 얼굴 */
+.head {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
 .face {
   width: 100px;
   height: 100px;
@@ -48,7 +55,6 @@ body {
   transform: translateX(-50%);
   animation: blink 1s infinite alternate;
 }
-
 /* 코 깜빡임 애니메이션 */
 @keyframes blink {
   from {
@@ -58,7 +64,26 @@ body {
     box-shadow: 0 0 20px red;
   }
 }
+.body {
+  width: 140px;
+  height: 80px;
+  background: #7a4a23;
+  border-radius: 50px;
+  margin: -20px auto 0;
+}
+.legs {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  margin: 0 auto;
+}
 
+.leg {
+  width: 14px;
+  height: 50px;
+  background: #5c3a1e;
+  border-radius: 10px;
+}
 #snow {
   position: fixed;
   top: 0;

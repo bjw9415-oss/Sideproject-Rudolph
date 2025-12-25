@@ -65,16 +65,17 @@ body {
   }
 }
 .body {
-  width: 140px;
-  height: 80px;
+  width: 160px;
+  height: 70px;
+  border-radius: 40px;
   background: #7a4a23;
-  border-radius: 50px;
+
   margin: -20px auto 0;
 }
 .legs {
   display: flex;
   justify-content: space-between;
-  width: 120px;
+  width: 140px;
   margin: 0 auto;
 }
 
@@ -101,4 +102,35 @@ body {
   border-radius: 50%;
   opacity: 0.8;
   user-select: none; /* 선택 방지 */
+}
+.neck {
+  width: 40px;
+  height: 40px;
+  background: #7a4a23;
+  margin: -10px auto;
+  border-radius: 10px;
+}
+
+.leg.front {
+  margin-right: 20px;
+}
+.leg.back {
+  margin-left: 20px;
+}
+.antler {
+  position: absolute;
+  top: -40px;
+  width: 10px;
+  height: 40px;
+  background: #5c3a1e;
+  border-radius: 10px;
+}
+
+.antler.left {
+  left: 25px;
+  transform: rotate(-20deg);
+}
+.antler.right {
+  right: 25px;
+  transform: rotate(20deg);
 }

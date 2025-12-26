@@ -1,21 +1,46 @@
-// 루돌프 요소 선택
+// 루돌프 요소 가져오기
 const rudolph = document.getElementById("rudolph");
 
-// 시작 위치
-let positionX = 0;
+// 현재 위치 값 (px 단위)
+let posX = 0;
+let posY = 200;
 
-// 일정 시간마다 실행
-setInterval(() => {
-  positionX += 2; // 이동 속도
+// 이동 속도
+const speed = 10;
 
-  // 화면 끝까지 가면 다시 처음으로
-  if (positionX > window.innerWidth) {
-    positionX = -100;
+// 키 눌렀을 때
+document.addEventListener("keydown", (e) => {
+  // 걷는 상태 ON
+  rudolph.classList.add("walking");
+
+  switch (e.key) {
+    case "ArrowRight":
+      posX += speed; // 오른쪽 이동
+      break;
+
+    case "ArrowLeft":
+      posX -= speed; // 왼쪽 이동
+      break;
+
+    case "ArrowUp":
+      posY -= speed; // 위로 이동
+      break;
+
+    case "ArrowDown":
+      posY += speed; // 아래로 이동
+      break;
   }
 
-  // 위치 적용
-  rudolph.style.left = positionX + "px";
-}, 16); // 약 60fps
+  // 화면에 적용
+  rudolph.style.left = posX + "px";
+  rudolph.style.top = posY + "px";
+});
+
+// 키 떼면 멈춤
+document.addEventListener("keyup", () => {
+  rudolph.classList.remove("walking");
+});
+
 // id가 "snow"인 HTML 요소를 가져온다
 // getElementById = "아이디로 요소를 가져온다"
 const snowcontainer = document.getElementById("snow");

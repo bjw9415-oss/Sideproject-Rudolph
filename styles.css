@@ -181,3 +181,22 @@ body {
 .back.left {
   animation: walk-back 0.6s infinite ease-in-out;
 }
+/* 걷는 상태일 때만 다리 애니메이션 */
+.walking .front.left,
+.walking .back.right {
+  animation: walk-front 0.6s infinite ease-in-out;
+}
+
+.walking .front.right,
+.walking .back.left {
+  animation: walk-back 0.6s infinite ease-in-out;
+}
+/* 오른쪽 보기 */
+#rudolph.right {
+  transform: scaleX(1);
+}
+
+/* 왼쪽 보기 (뒤집기) */
+#rudolph.left {
+  transform: scaleX(-1);
+}

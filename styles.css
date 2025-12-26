@@ -61,7 +61,7 @@ body {
     box-shadow: 0 0 5px red;
   }
   to {
-    box-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px rgb(37, 34, 34);
   }
 }
 .body {
@@ -80,10 +80,12 @@ body {
 }
 
 .leg {
+  position: absolute;
   width: 14px;
   height: 50px;
   background: #5c3a1e;
   border-radius: 10px;
+  transform-origin: top center;
 }
 #snow {
   position: fixed;
@@ -133,4 +135,49 @@ body {
 .antler.right {
   right: 25px;
   transform: rotate(20deg);
+}
+.front.left {
+  left: 20px;
+}
+.front.right {
+  left: 50px;
+}
+
+.back.left {
+  left: 80px;
+}
+.back.right {
+  left: 110px;
+}
+@keyframes walk-front {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes walk-back {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+.front.left,
+.back.right {
+  animation: walk-front 0.6s infinite ease-in-out;
+}
+
+.front.right,
+.back.left {
+  animation: walk-back 0.6s infinite ease-in-out;
 }
